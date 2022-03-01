@@ -1,0 +1,33 @@
+<html xmlns:td="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <head>
+        <link rel="stylesheet"
+              target="_blank" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/default.min.css">
+        <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <title>Latest</title>
+    </head>
+<body>
+<tr th:each="codeSnippet: ${codeSnippets}">
+    <div>
+        <p class ="dateLabel" ><span id="load_date" td th:text="${codeSnippet.date}"/></p>
+        <div class="codeBox">
+            <pre id= "code_snippet"><code><p td th:text="${codeSnippet.code}"/></code></pre>
+        </div>
+    </div>
+
+</tr>
+<style>
+    .codeBox {
+    padding:2px 6px 4px 6px;
+    color: #555555;
+    background-color: #eeeeee;
+    border: #dddddd 2px solid
+ }
+    .dateLabel {
+        color:#00FF00;
+    }
+</style>
+</body>
+</html>
